@@ -1,0 +1,49 @@
+Discussion Log
+Assignment: Project 6
+Name: Phil Fevry
+
+Time taken: About a week @ around 5 hours a day each (~35 hours)
+
+What I learned:
+- Increased understanding of why its important to split tasks up into various methods for readability and ease of modification 
+- I employed valuable practice on designing and laying out classes.
+- Nothing special is needed to really create files. PrintWriter outputs to a file just like it outputs to screen. 
+- (Offtopic) started using a third-party text-editor with the java compiler instead of BlueJ and I realized the production gains of using a text editor over an IDE for simple projects.
+
+Difficulties Faced:
+-Figuring out how to design the main algorithm
+-- The first commit had an infinite loop some but not all the times when it first ran
+
+Resources Used:
+Java API
+
+==================
+(NEW)
+Version 1 changes:
+- Refactored and reorganized a lot of code to be less redundent and easier to read
+- Made comments more clear and easier to understand
+- Sorted the cards before each shiftCards() cycle
+- Added JavaDocs
+
+Time taken: 4 hours
+
+What I learned: 
+- Increased appreciation for making debug/testing tools
+- More about Git and importance of version control
+
+Difficulties I faced:
+- Figuring out how to fix the infinite loop condition in the last commit
+
+How I fixed it: 
+- Noticed a pattern with every output where an infinite loop occured
+
+Output in Terminal =
+[ 1   2   3   4   5   5   8   8   9 ] - 5 & 8
+[ 1   2   2   3   5   7   8   8   9 ] - 2 & 8
+[ 1   2   3   4   5   5   8   8   9 ] - 5 & 8
+[ 1   2   3   3   5   6   8   8   9 ] - 3 & 8
+[ 1   2   3   4   4   6   8   8   9 ] - 4 & 8
+
+- The number 8 was always involved.
+- I figured it must have been an off by one error because 8 is one less than 9
+- I tweaked the numbers in shiftCards() and most of the methods that dealt with unique numbers
