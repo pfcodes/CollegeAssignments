@@ -1,0 +1,3 @@
+public enum TaxStatus {
+        SINGLE, MARRIED_FILING_JOINT, HEAD_OF_HOUSEHOLD,
+        MARRIED_FILING_SEPARATE}

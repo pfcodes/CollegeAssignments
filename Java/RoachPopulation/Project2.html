@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8">
+<title>Project2 - Spring 2017</title>
+
+
+<style type="text/css">
+body {
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  padding: 30px; }
+
+body > *:first-child {
+  margin-top: 0 !important; }
+body > *:last-child {
+  margin-bottom: 0 !important; }
+
+a {
+  color: #4183C4; }
+a.absent {
+  color: #cc0000; }
+a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  cursor: text;
+  position: relative; }
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA09pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoMTMuMCAyMDEyMDMwNS5tLjQxNSAyMDEyLzAzLzA1OjIxOjAwOjAwKSAgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUM2NjlDQjI4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUM2NjlDQjM4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5QzY2OUNCMDg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5QzY2OUNCMTg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsQhXeAAAABfSURBVHjaYvz//z8DJYCRUgMYQAbAMBQIAvEqkBQWXI6sHqwHiwG70TTBxGaiWwjCTGgOUgJiF1J8wMRAIUA34B4Q76HUBelAfJYSA0CuMIEaRP8wGIkGMA54bgQIMACAmkXJi0hKJQAAAABJRU5ErkJggg==) no-repeat 10px center;
+  text-decoration: none; }
+
+h1 tt, h1 code {
+  font-size: inherit; }
+
+h2 tt, h2 code {
+  font-size: inherit; }
+
+h3 tt, h3 code {
+  font-size: inherit; }
+
+h4 tt, h4 code {
+  font-size: inherit; }
+
+h5 tt, h5 code {
+  font-size: inherit; }
+
+h6 tt, h6 code {
+  font-size: inherit; }
+
+h1 {
+  font-size: 28px;
+  color: black; }
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #cccccc;
+  color: black; }
+
+h3 {
+  font-size: 18px; }
+
+h4 {
+  font-size: 16px; }
+
+h5 {
+  font-size: 14px; }
+
+h6 {
+  color: #777777;
+  font-size: 14px; }
+
+p, blockquote, ul, ol, dl, li, table, pre {
+  margin: 15px 0; }
+
+hr {
+  background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x 0 0;
+  border: 0 none;
+  color: #cccccc;
+  height: 4px;
+  padding: 0;
+}
+
+body > h2:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+body > h1:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+  body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0; }
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0; }
+
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
+  margin-top: 0; }
+
+li p.first {
+  display: inline-block; }
+li {
+  margin: 0; }
+ul, ol {
+  padding-left: 30px; }
+
+ul :first-child, ol :first-child {
+  margin-top: 0; }
+
+dl {
+  padding: 0; }
+  dl dt {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0;
+    margin: 15px 0 5px; }
+    dl dt:first-child {
+      padding: 0; }
+    dl dt > :first-child {
+      margin-top: 0; }
+    dl dt > :last-child {
+      margin-bottom: 0; }
+  dl dd {
+    margin: 0 0 15px;
+    padding: 0 15px; }
+    dl dd > :first-child {
+      margin-top: 0; }
+    dl dd > :last-child {
+      margin-bottom: 0; }
+
+blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777; }
+  blockquote > :first-child {
+    margin-top: 0; }
+  blockquote > :last-child {
+    margin-bottom: 0; }
+
+table {
+  padding: 0;border-collapse: collapse; }
+  table tr {
+    border-top: 1px solid #cccccc;
+    background-color: white;
+    margin: 0;
+    padding: 0; }
+    table tr:nth-child(2n) {
+      background-color: #f8f8f8; }
+    table tr th {
+      font-weight: bold;
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr td {
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr th :first-child, table tr td :first-child {
+      margin-top: 0; }
+    table tr th :last-child, table tr td :last-child {
+      margin-bottom: 0; }
+
+img {
+  max-width: 100%; }
+
+span.frame {
+  display: block;
+  overflow: hidden; }
+  span.frame > span {
+    border: 1px solid #dddddd;
+    display: block;
+    float: left;
+    overflow: hidden;
+    margin: 13px 0 0;
+    padding: 7px;
+    width: auto; }
+  span.frame span img {
+    display: block;
+    float: left; }
+  span.frame span span {
+    clear: both;
+    color: #333333;
+    display: block;
+    padding: 5px 0 0; }
+span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-center > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: center; }
+  span.align-center span img {
+    margin: 0 auto;
+    text-align: center; }
+span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px 0 0;
+    text-align: right; }
+  span.align-right span img {
+    margin: 0;
+    text-align: right; }
+span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left; }
+  span.float-left span {
+    margin: 13px 0 0; }
+span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right; }
+  span.float-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: right; }
+
+code, tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px; }
+
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent; }
+
+.highlight pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+  pre code, pre tt {
+    background-color: transparent;
+    border: none; }
+
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:0 auto;
+    }
+}
+@media print {
+	table, pre {
+		page-break-inside: avoid;
+	}
+	pre {
+		word-wrap: break-word;
+	}
+}
+</style>
+
+
+</head>
+
+<body>
+
+<h3 id="toc_0"><em>CS-140 &mdash; Spring 2017</em></h3>
+
+<h1 id="toc_1">Project 2</h1>
+
+<h2 id="toc_2">Objectives</h2>
+
+<p>The objective of this project is to learn how create a class on your own and how to test code with the unit testing framework <code>JUnit</code>. </p>
+
+<h2 id="toc_3">Background</h2>
+
+<p>The project contains one class – <code>Project2Test</code>. </p>
+
+<p>The <code>project2Test</code> class represents a test suite for a class <code>RoachPopulation.java</code> that you will be writing.
+
+<p>The <code>Project2Test</code> class is a test suite that is used to test some aspects of the <code>RoachPopulation</code> class.
+It does this by creating a RoachPopulation object and printing the results of calling some of their methods. </p>
+
+<p>In class, we wrote a driver class for testing our <code>BankAccount</code> class.  It relies on a human to read the output and to compare it to the expected output to determine if the code is working correctly. The problem with this testing method is that the human has to carefully check the output, and needs to do so every time the code is changed, compiled and run. What we would like to have is a more automated way of testing our code. </p>
+
+<p>Unit testing provides a way of automatically testing individual classes and methods in an automated and repeatable way. By writing tests that test the behavior of classes and methods and comparing them automatically to expected values, we can let the computer run through our suite of tests every time we make a change to the code. This way we can be sure that any changes we made did not break some code that was already working. In many large software projects the test suite is run automatically every time a developer pushes new code to repository. </p>
+
+<p>We will be using <code>JUnit</code>, a unit testing framework written specifically for Java. JUnit can be run on its own, or as a plug-in to integrated development environments like Eclipse. JUnit is already built in to BlueJ. </p>
+
+<h2 id="toc_2">Objectives</h2>
+
+<p>This project provides you with the opportunity to put together nearly all of the material you have learned so far to create a
+single program. Most of what you are asked to do is very similar to what you did in the labs and in-class work,
+so look back at those labs and class examples for ideas. </p>
+<p>You will be writing code for one class - <code>RoachPopulation</code>.
+
+<h2 id="toc_3">Procedure</h2>
+<p> In this programming project, you will write a simple program to do the following.</p>
+<ol>
+<li>Implement a class <code>RoachPopulation</code> that simulates the growth of a roach population.
+The class has the following methods:</li>
+<ol>
+<li>The constructor takes the size of the initial roach population (an <code>int</code>). </li>
+<li>The <code>breed</code> method simulates a period in which the roaches breed, which doubles their population.
+This method has no arguments and no return value.</li>
+<li>The <code>spray</code> method simulates spraying with insecticide, which reduces the population
+by the given percentage. This method takes a percentage as a double value and has no return value </li>
+
+<li>The <code>getRoaches</code> method returns the current number of roaches.</li>
+<li>The <code>toString</code> method returns a String.  For example, if the current number of roaches
+in the population is 50, this method will return "Number of roaches in the population: 50"</li>
+<li><b>You need to write javadoc comments for all the methods in <code>RoachPopulation</code> class</b>.  Please
+refer to your text book and BankAccount.java for more information</li>
+</ol>
+
+<li>A program <code>Project2Test</code> is already provided for you.  To use this code in your Bluej package, do the following:</li>
+
+<ol>
+     <li>Create a folder Project2Code within Project2 folder</li>
+	 <li>Create empty RoachPopulation class.
+	 <li>Create empty RoachPopulationTest class by doing the following steps.  To turn on the testing tools in BlueJ:</li>.
+	     <ol>
+	        <li>Open <code>Preferences…</code> </li>
+	        <li>Click on the <code>Interfaces</code> tab </li>
+	        <li>Check the <code>Show Unit Testing Tools</code> check-box </li>
+	        <li> Right-click on the box for the <code>RoachPopulation</code> class you just created, and choose <code>Create Test Class</code>.
+	          A new box will appear (colored green) called <code>RoachPopulationTest</code>, and with
+	          the annotation <code>&lt;&lt;unit test&gt;&gt;</code>. </li>
+	        <li> Double-click the <code>RoachPopulationTest</code> class to view the source code. </li>
+	        <li> The <code>RoachPopulationTest</code> class imports some code from <code>org.junit</code>, and sets up three methods – a constructor, a <code>setUp</code> method and a <code>tearDown</code> method. </li>
+            <li> Replace the entire <code>RoachPopulationTest.java</code> with the contents of <code>Project2Test.java</code> file.</li>
+         </ol>
+
+	  <li> Compile your code and run the tests. This should pass because you have an empty class and an empty test class.</li>
+	  <li> You should get in the habit of writing and testing a single method before moving on to the next.  </li>
+
+      <li> Write your constructor for the <code>RoachPopulation</code> class, and then test it by uncommenting the
+          <code>setup</code> method in <code>RoachPopulation</code>, compiling both classes,
+           and running the tests. If your test passes, move on to the next method.
+           If your test fails, make corrections to your constructor until the test passes. </li>
+       <li> Continue this process for each of the remaining methods and their associated tests: </li>
+       <ol>
+           <li> <code>getRoaches</code> and <code>test_getRoaches</code></li>
+           <li> <code>toString</code> and <code>test_toString()</code> </li>
+           <li> <code>breed</code> and <code>test_breed</code> </li>
+           <li> <code>spray</code> and <code>test_spray</code></li>
+           <li> <code>test_breedAndSpray</code></;li>
+       </ol>
+    </ol>
+
+<h2 id="toc_3">Specifications</h2>
+You need to submit your Project2 folder with the subfoler Project2Code with <code>RoachPopulation.java</code>
+and <code>RoachPopulationTest.java</code> files.
+A log file must address <b>what you learned in this project and the difficulties you faced</b>, time you spent on the project,
+web sources you referenced etc.
+
+<h3 id="toc_4">This is an Individual Assignment - No Partners</h3>
+
+<p>As this is a Project (and not a Lab) you will be working on your own, not with a partner.
+You should not be sharing your code with anyone else, other than the instructor.  </p>
+
+<p>You will need to fork your own private Project2 repository on GitLab for this project.
+The only person who should have any access to your repository is your instructor.  </p>
+
+<p>You can ask questions on Piazza about setting up your repository on GitLab, about using Git
+to send code to the instructor, and general questions about how to write your code.
+However you should not be posting sections of code and asking others to find your errors. </p>
+
+<h3 id="toc_5">Deliverables</h3>
+
+<p>Be sure that you have your name and an explanation of what your program does in the Javadoc comments.
+Be sure that you have indented consistently.  </p>
+<p> <b>You have to submit a discussion log along with the project.
+Please refer to DiscussionLogGuidelines repository or Lab2 for more information</b>.</p>
+
+<p>The instructor will pull your Project2 from your GitLab repository to grade it. Make sure:</p>
+
+<ol>
+<li>You have pushed all changes to your shared repository. (I can’t access local changes on your computer.)<br></li>
+<li>You have added your instructor as Master to your shared GitLab repository.<br></li>
+</ol>
+
+<h3 id="toc_6">Due Date/Time</h3>
+
+<p>Your project must be pushed to GitLab by Thursday 2/16 at 11:59pm. </p>
+
+<h2 id="toc_7">Copyright and License</h2>
+
+<h4 id="toc_8">&copy;2017 CS 140 Instructors, Worcester State University</h4>
+
+<p><img src="http://mirrors.creativecommons.org/presskit/buttons/88x31/png/by-sa.png" width=100px/>This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">http://creativecommons.org/licenses/by-sa/4.0/</a> or send a letter to Creative Commons, 444 Castro Street, Suite 900, Mountain View, California, 94041, USA.</p>
+
+
+
+
+</body>
+
+</html>
